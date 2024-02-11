@@ -59,7 +59,6 @@ body * {
 /* swicth*/
 
 #switch {
-  border: 1px red solid;
   position: relative;
   width: 64px;
   margin: 4px auto;
@@ -77,11 +76,16 @@ body * {
   position: absolute;
   z-index: 1;
   transform: translatey(-50%);
+
+  animation: slide-back 0.2s;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
 }
 
 #switch span {
@@ -169,6 +173,24 @@ footer {
     --bg-url: url(./asset/bg-desktop.jpg);
   }
   .light {
-    --bg--url: url(./asset/bg-desktop-light.jpg);
+    --bg-url: url(./asset/bg-desktop-light.jpg);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  form {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
