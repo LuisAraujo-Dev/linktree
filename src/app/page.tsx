@@ -1,5 +1,6 @@
 import { LinkButton } from "@/components/LinkButton";
 import { Profile } from "@/components/Profile";
+import { links } from "@/data/links";
 
 export default function Home() {
   return (
@@ -12,7 +13,12 @@ export default function Home() {
       />
       <p className="text-gray-400 mt-6">Meus links estão aqui abaixo 👇</p>
 
-      <LinkButton label={""} href={""}/>
+      <div>
+        {links.map((link, index) => (
+          <LinkButton key={index} {...link}/>
+        ))}
+      </div>
+      
     </main>
 
     
