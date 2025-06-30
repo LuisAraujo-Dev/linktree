@@ -1,3 +1,4 @@
+import { LinkButton } from "@/components/LinkButton";
 import { Profile } from "@/components/Profile";
 
 export default function Home() {
@@ -10,6 +11,10 @@ export default function Home() {
         description="Desenvolvedor Web • React • Next.js"
       />
       <p className="text-gray-400 mt-6">Meus links estão aqui abaixo 👇</p>
+
+      <LinkButton label={""} href={""}/>
     </main>
+
+    
   );
 }
