@@ -1,3 +1,4 @@
+import { Footer } from "@/components/Footer";
 import { LinkButton } from "@/components/LinkButton";
 import { Profile } from "@/components/Profile";
 import { links } from "@/data/links";
@@ -18,6 +19,9 @@ export default function Home() {
           <LinkButton key={index} {...link}/>
         ))}
       </div>
+
+      <Footer/>
     </main>
+    
   );
 }
