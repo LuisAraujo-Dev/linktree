@@ -18,9 +18,6 @@ export default function Home() {
           <LinkButton key={index} {...link}/>
         ))}
       </div>
-      
     </main>
-
-    
   );
 }
