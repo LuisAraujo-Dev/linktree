@@ -13,7 +13,7 @@ export default function Home() {
       />
       <p className="text-gray-400 mt-6">Meus links estão aqui abaixo 👇</p>
 
-      <div>
+      <div className="w-full max-w-md mt-8">
         {links.map((link, index) => (
           <LinkButton key={index} {...link}/>
         ))}
