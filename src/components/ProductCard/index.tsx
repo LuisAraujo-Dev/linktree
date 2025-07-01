@@ -1,19 +1,30 @@
 import Image from "next/image";
 
 type ProductCardProps = {
-  image: string,
-  title: string, 
-  content: string, 
-  link: string, 
-}
+  image: string;
+  title: string;
+  content: string;
+  link: string;
+};
 
-export function ProductCard({image, title, content, link}: ProductCardProps) {
+export function ProductCard({ image, title, content, link }: ProductCardProps) {
   return (
-    <div>
-      <Image src={image} alt={title} width="300" height="200"/>
-      <h3>{title}</h3>
-      <p>{content}</p>
-      <a href={link}>Quero saber mais</a>
+    <div className="bg-slate-800 rounded-xl p-4 mb-4 text-center">
+      <Image
+        src={image}
+        alt={title}
+        width="300"
+        height="200"
+        className="rounded-md mx-auto"
+      />
+      <h3 className="text-lg font-semibold mt-3">{title}</h3>
+      <p className="text-sm text-gray-400 mt-1">{content}</p>
+      <a
+        href={link}
+        className="inline-block mt-3 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+      >
+        Quero saber mais
+      </a>
     </div>
-  )
+  );
 }

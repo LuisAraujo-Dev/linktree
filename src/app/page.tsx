@@ -22,8 +22,8 @@ export default function Home() {
         ))}
       </div>
 
-      <section>
-        <h2>Produtos em destaque</h2>
+      <section className="w-full max-w-md mt-12">
+        <h2 className="text-xl font-bold mb-4">Produtos em destaque</h2>
         {products.map((product) => (
           <ProductCard key={product.id} {...product} />
         ))}
