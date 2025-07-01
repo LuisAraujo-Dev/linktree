@@ -1,7 +1,9 @@
 import { Footer } from "@/components/Footer";
 import { LinkButton } from "@/components/LinkButton";
+import { ProductCard } from "@/components/ProductCard";
 import { Profile } from "@/components/Profile";
 import { links } from "@/data/links";
+import { products } from "@/data/products";
 
 export default function Home() {
   return (
@@ -16,12 +18,17 @@ export default function Home() {
 
       <div className="w-full max-w-md mt-8">
         {links.map((link, index) => (
-          <LinkButton key={index} {...link}/>
+          <LinkButton key={index} {...link} />
         ))}
       </div>
 
-      <Footer/>
+      <section>
+        <h2>Produtos em destaque</h2>
+        {products.map((product) => (
+          <ProductCard key={product.id} {...product} />
+        ))}
+      </section>
+      <Footer />
     </main>
-    
   );
 }
