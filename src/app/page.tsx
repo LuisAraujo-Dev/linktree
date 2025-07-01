@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from "react";
 import { Footer } from "@/components/Footer";
 import { LinkButton } from "@/components/LinkButton";
 import { ProductCard } from "@/components/ProductCard";
@@ -6,6 +9,8 @@ import { links } from "@/data/links";
 import { products } from "@/data/products";
 
 export default function Home() {
+  const [showProducts, setShowProducts] = useState(false);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-slate-900 text-white p-4">
       <Profile
@@ -14,20 +19,36 @@ export default function Home() {
         name="@luisaraujo"
         description="Desenvolvedor Web • React • Next.js"
       />
+
       <p className="text-gray-400 mt-6">Meus links estão aqui abaixo 👇</p>
 
       <div className="w-full max-w-md mt-8">
-        {links.map((link, index) => (
-          <LinkButton key={index} {...link} />
-        ))}
+        {links.map((link, index) => {
+          if (link.label === "Ver produtos") {
+            return (
+              <button
+                key={index}
+                onClick={() => setShowProducts(!showProducts)}
+                className="flex items-center gap-3 w-full bg-green-600 text-white font-medium py-3 px-4 rounded-xl my-3 hover:bg-green-700 transition"
+              >
+                <link.icon className="w-5 h-5" />
+                <span className="flex-1 text-center">{link.label}</span>
+              </button>
+            );
+          }
+          return <LinkButton key={index} {...link} />;
+        })}
       </div>
 
-      <section className="w-full max-w-md mt-12">
-        <h2 className="text-xl font-bold mb-4">Produtos em destaque</h2>
-        {products.map((product) => (
-          <ProductCard key={product.id} {...product} />
-        ))}
-      </section>
+      {showProducts && (
+        <section className="w-full max-w-md mt-12">
+          <h2 className="text-xl font-bold mb-4">Produtos em destaque</h2>
+          {products.map((product) => (
+            <ProductCard key={product.id} {...product} />
+          ))}
+        </section>
+      )}
+
       <Footer />
     </main>
   );
