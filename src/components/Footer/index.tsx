@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="flex items-center justify-center gap-2 text-sm text-gray-400 mt-10">
+    <footer className="flex items-center justify-center gap-2 text-sm sm:text-base text-gray-400 mt-10 flex-wrap">
       <a
-        href="https://luisaraujo.dev" // Altere se seu domínio for diferente
+        href="https://luisaraujo.dev"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-2 hover:text-white transition"

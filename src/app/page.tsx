@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import { Footer } from "@/components/Footer";
@@ -12,7 +12,7 @@ export default function Home() {
   const [showProducts, setShowProducts] = useState(false);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-slate-900 text-white p-4">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-slate-900 text-white p-4 sm:p-6 md:p-8">
       <Profile
         src="/profile.jpg"
         alt="Foto de Luís Araújo"
@@ -20,7 +20,9 @@ export default function Home() {
         description="Desenvolvedor Web • React • Next.js"
       />
 
-      <p className="text-gray-400 mt-6">Meus links estão aqui abaixo 👇</p>
+      <p className="text-gray-400 mt-4 text-center text-sm sm:text-base max-w-xs sm:max-w-md">
+        Meus links estão aqui abaixo 👇
+      </p>
 
       <div className="w-full max-w-md mt-8">
         {links.map((link, index) => {
@@ -41,8 +43,10 @@ export default function Home() {
       </div>
 
       {showProducts && (
-        <section className="w-full max-w-md mt-12">
-          <h2 className="text-xl font-bold mb-4">Produtos em destaque</h2>
+        <section className="w-full max-w-md mt-12 px-2 sm:px-0">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center sm:text-left">
+            Produtos em destaque
+          </h2>
           {products.map((product) => (
             <ProductCard key={product.id} {...product} />
           ))}
