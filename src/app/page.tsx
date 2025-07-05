@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-slate-900 text-white p-4 sm:p-6 md:p-8">
       <Profile
-        src="/profile.jpg"
+        src="/images/profile.png"
         alt="Foto de Luís Araújo"
         name="@luisaraujo"
         description="Desenvolvedor Web • React • Next.js"
