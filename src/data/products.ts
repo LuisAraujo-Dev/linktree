@@ -13,4 +13,11 @@ export const products = [
     image: "/images/imagem do seu produto.png",
     link: "https://wa.me/55999999999?text=Olá, tenho interesse no Produto 2",
   },
+   {
+    id: 3,
+    title: "Nome do Produto 3",
+    content: "Descrição breve do produto.",
+    image: "/images/imagem do seu produto.png",
+    link: "https://wa.me/55999999999?text=Olá, tenho interesse no Produto 3",
+  },
 ];
