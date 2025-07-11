@@ -3,10 +3,9 @@
 import { useState } from "react";
 import { Footer } from "@/components/Footer";
 import { LinkButton } from "@/components/LinkButton";
-import { ProductCard } from "@/components/ProductCard";
 import { Profile } from "@/components/Profile";
 import { links } from "@/data/links";
-import { products } from "@/data/products";
+import ProductsCarousel from "@/components/ProductsCarousel";
 
 export default function Home() {
   const [showProducts, setShowProducts] = useState(false);
@@ -43,14 +42,7 @@ export default function Home() {
       </div>
 
       {showProducts && (
-        <section className="w-full max-w-md mt-12 px-2 sm:px-0">
-          <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center sm:text-left">
-            Produtos em destaque
-          </h2>
-          {products.map((product) => (
-            <ProductCard key={product.id} {...product} />
-          ))}
-        </section>
+        <ProductsCarousel/>
       )}
 
       <Footer />
